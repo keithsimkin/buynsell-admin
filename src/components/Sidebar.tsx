@@ -22,7 +22,6 @@ import {
   MessageSquareWarning,
   Star,
   Wrench,
-  ChevronDown,
 } from 'lucide-react'
 
 type NavItem = {
@@ -90,21 +89,10 @@ const groups: { label: string; items: NavItem[] }[] = [
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2.5 px-3 py-1">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <rect x="3" y="3" width="10" height="10" rx="2.5" fill="#111827" />
-        <rect x="15" y="3" width="10" height="10" rx="2.5" fill="#b8f04a" />
-        <rect x="3" y="15" width="10" height="10" rx="2.5" fill="#b8f04a" />
-        <rect x="15" y="15" width="10" height="10" rx="2.5" fill="#111827" />
-      </svg>
-      <div className="min-w-0">
-        <div className="flex items-center gap-1">
-          <span className="text-[16px] font-semibold tracking-tight text-gray-900">
-            Buynsell
-          </span>
-          <ChevronDown className="h-3.5 w-3.5 text-gray-400" />
-        </div>
-        <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400">
+    <div className="flex items-center gap-3 px-2 py-1">
+      <img src="/logo.png" alt="Buynsell" className="h-8 w-auto shrink-0" />
+      <div className="min-w-0 leading-tight">
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-bn-muted">
           Super admin
         </p>
       </div>
@@ -132,15 +120,15 @@ export default function Sidebar() {
   const { pathname, search } = useLocation()
 
   return (
-    <aside className="flex h-screen w-[260px] shrink-0 flex-col border-r border-gray-200/80 bg-white">
-      <div className="px-3 pb-3 pt-5">
+    <aside className="flex h-screen w-[270px] shrink-0 flex-col border-r border-bn-border/70 bg-white">
+      <div className="border-b border-bn-border/60 px-3 pb-3 pt-5">
         <Logo />
       </div>
 
-      <nav className="flex-1 overflow-y-auto px-3 pb-4">
+      <nav className="flex-1 overflow-y-auto px-3 pb-4 pt-3">
         {groups.map((group) => (
           <div key={group.label} className="mb-4">
-            <p className="mb-1.5 px-3 text-[11px] font-medium uppercase tracking-wider text-gray-400">
+            <p className="mb-1.5 px-3 text-[11px] font-medium uppercase tracking-wider text-bn-muted">
               {group.label}
             </p>
             <ul className="space-y-0.5">
@@ -163,14 +151,14 @@ export default function Sidebar() {
                       className={() =>
                         `flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-[13px] font-medium transition-colors ${
                           best
-                            ? 'bg-bn-lime text-gray-900'
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            ? 'bg-bn-yellow text-bn-ink'
+                            : 'text-bn-muted hover:bg-bn-yellow/20 hover:text-bn-ink'
                         }`
                       }
                     >
                       <Icon
                         className={`h-[16px] w-[16px] shrink-0 ${
-                          best ? 'text-gray-800' : 'text-gray-400'
+                          best ? 'text-bn-ink' : 'text-neutral-400'
                         }`}
                         strokeWidth={1.75}
                       />

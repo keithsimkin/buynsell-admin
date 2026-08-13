@@ -67,7 +67,7 @@ export default function SuperTools() {
   return (
     <div className="flex flex-col gap-4">
       {message && (
-        <div className="rounded-2xl border border-bn-lime bg-bn-lime/30 px-4 py-3 text-[13px]">
+        <div className="rounded-2xl border border-bn-yellow bg-bn-yellow/30 px-4 py-3 text-[13px] font-medium">
           {message}
         </div>
       )}
@@ -77,7 +77,7 @@ export default function SuperTools() {
           <Link
             key={t.label}
             to={t.to}
-            className="rounded-2xl border border-gray-100 bg-white p-4 transition hover:border-gray-300"
+            className="rounded-2xl border border-bn-border/80 bg-white p-4 transition hover:border-bn-yellow hover:shadow-[var(--shadow-bn-sm)]"
           >
             <p className="text-[11px] uppercase tracking-wider text-gray-400">{t.label}</p>
             <p className="mt-1 text-[22px] font-semibold tabular-nums">{t.value}</p>
@@ -114,7 +114,7 @@ export default function SuperTools() {
             {admins.map((a) => (
               <li
                 key={a.id}
-                className="flex items-center justify-between rounded-xl border border-gray-100 px-3 py-2"
+                className="flex items-center justify-between rounded-xl border border-bn-border/70 px-3 py-2"
               >
                 <div>
                   <Link to={`/users/${a.id}`} className="text-[13px] font-medium hover:underline">

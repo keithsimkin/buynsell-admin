@@ -78,7 +78,7 @@ export default function Categories() {
                 type="button"
                 onClick={() => select(c)}
                 className={`flex w-full items-center gap-2 px-4 py-2.5 text-left text-[13px] hover:bg-gray-50 ${
-                  selected?.slug === c.slug ? 'bg-bn-lime/40' : ''
+                  selected?.slug === c.slug ? 'bg-bn-yellow/50' : ''
                 }`}
               >
                 <span>{c.icon}</span>

@@ -36,12 +36,12 @@ export default function Header() {
   const title = resolveTitle(pathname)
 
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b border-gray-200/60 px-6">
+    <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b border-bn-border/70 bg-white/80 px-6 backdrop-blur-sm">
       <div>
-        <h1 className="text-[15px] font-semibold text-gray-900">{title}</h1>
-        <p className="text-[12px] text-gray-400">buynsell.ug · Neon-backed super admin</p>
+        <h1 className="text-[15px] font-semibold tracking-tight text-bn-ink">{title}</h1>
+        <p className="text-[12px] text-bn-muted">buynsell.ug · Neon-backed super admin</p>
       </div>
-      <div className="rounded-full bg-bn-lime/70 px-3 py-1 text-[11px] font-semibold text-gray-800">
+      <div className="rounded-full bg-bn-yellow px-3 py-1 text-[11px] font-semibold text-bn-ink">
         Live DB
       </div>
     </header>

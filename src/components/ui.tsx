@@ -9,7 +9,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03)] ${className}`}
+      className={`overflow-hidden rounded-2xl border border-bn-border/80 bg-bn-card shadow-[var(--shadow-bn-sm)] ${className}`}
     >
       {children}
     </div>
@@ -17,13 +17,14 @@ export function Card({
 }
 
 const tones: Record<string, string> = {
-  green: 'bg-bn-lime/80 text-gray-900',
-  lime: 'bg-lime-100 text-lime-800',
+  green: 'bg-bn-yellow text-bn-ink',
+  lime: 'bg-bn-yellow/80 text-bn-ink',
+  yellow: 'bg-bn-yellow text-bn-ink',
   red: 'bg-red-100 text-red-700',
-  orange: 'bg-orange-100 text-orange-700',
+  orange: 'bg-bn-orange/15 text-bn-orange-dark',
   blue: 'bg-sky-100 text-sky-700',
-  gray: 'bg-gray-100 text-gray-600',
-  dark: 'bg-gray-900 text-white',
+  gray: 'bg-neutral-100 text-neutral-600',
+  dark: 'bg-bn-ink text-white',
   purple: 'bg-violet-100 text-violet-700',
 }
 
@@ -45,7 +46,7 @@ export function Badge({
 
 export function statusTone(status?: string | null): keyof typeof tones {
   const s = (status || '').toLowerCase()
-  if (['active', 'approved', 'resolved', 'ok'].includes(s)) return 'lime'
+  if (['active', 'approved', 'resolved', 'ok', 'sent'].includes(s)) return 'yellow'
   if (['pending', 'inreview', 'in review', 'needs info', 'warned', 'restricted'].includes(s))
     return 'orange'
   if (['rejected', 'suspended', 'banned', 'dismissed', 'degraded'].includes(s)) return 'red'
@@ -62,15 +63,15 @@ export function Button({
   variant?: 'primary' | 'secondary' | 'danger' | 'ghost'
 }) {
   const styles = {
-    primary: 'bg-gray-900 text-white hover:bg-gray-800',
-    secondary: 'border border-gray-200 bg-white text-gray-700 hover:bg-gray-50',
-    danger: 'bg-red-600 text-white hover:bg-red-700',
-    ghost: 'text-gray-600 hover:bg-gray-100',
+    primary: 'bg-bn-yellow text-bn-ink hover:bg-bn-yellow-dark',
+    secondary: 'border border-bn-border bg-white text-bn-ink hover:bg-bn-cream',
+    danger: 'bg-bn-orange text-white hover:bg-bn-orange-dark',
+    ghost: 'text-bn-muted hover:bg-black/5',
   }
   return (
     <button
       type="button"
-      className={`inline-flex items-center justify-center gap-1.5 rounded-full px-3.5 py-1.5 text-[12px] font-semibold transition-colors disabled:opacity-50 ${styles[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-1.5 rounded-xl px-3.5 py-1.5 text-[12px] font-semibold transition-colors disabled:opacity-50 ${styles[variant]} ${className}`}
       {...props}
     >
       {children}
@@ -190,10 +191,10 @@ export function Pagination({
               key={item}
               type="button"
               onClick={() => onPageChange(item)}
-              className={`inline-flex h-8 min-w-8 items-center justify-center rounded-full px-2.5 text-[12px] font-semibold ${
+              className={`inline-flex h-8 min-w-8 items-center justify-center rounded-xl px-2.5 text-[12px] font-semibold ${
                 item === safePage
-                  ? 'bg-gray-900 text-white'
-                  : 'border border-gray-200 bg-white text-gray-700 hover:bg-gray-50'
+                  ? 'bg-bn-yellow text-bn-ink'
+                  : 'border border-bn-border bg-white text-bn-ink hover:bg-bn-cream'
               }`}
             >
               {item}

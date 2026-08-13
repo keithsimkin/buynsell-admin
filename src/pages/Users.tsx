@@ -168,7 +168,7 @@ export default function Users() {
                 {items.map((u) => (
                   <tr
                     key={u.id}
-                    className="cursor-pointer border-b border-gray-50 hover:bg-bn-lime/20"
+                    className="cursor-pointer border-b border-gray-50 hover:bg-bn-yellow/25"
                     onClick={() => navigate(`/users/${u.id}`)}
                   >
                     <td className="px-5 py-3">

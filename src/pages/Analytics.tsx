@@ -80,7 +80,7 @@ export default function Analytics() {
             <li key={u.role}>
               <Link
                 to={`/users?role=${encodeURIComponent(u.role)}`}
-                className="flex items-center justify-between px-5 py-3 text-[13px] transition hover:bg-bn-lime/20"
+                className="flex items-center justify-between px-5 py-3 text-[13px] transition hover:bg-bn-yellow/25"
               >
                 <span className="capitalize text-gray-600">{u.role}</span>
                 <span className="flex items-center gap-2 font-semibold">
